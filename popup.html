@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <style>
+      * {
+        font-family: "Lato" !important;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+
+      html, body {
+        width: 350px;
+        height: 500px;
+        background-color: #d1d1d1;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        height: 30px;
+        width: 30px;
+        outline: none;
+        border-radius: 30px;
+
+      }
+
+
+
+      .title {
+        width: 350px;
+        height: 100px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        position: relative;
+        margin-right: 20px;
+      }
+      .cookie-jar {
+        width: 350px;
+        height: 100px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      .bakery-land {
+        width: 350px;
+        height: 100px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      .bakery {
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      .bakery:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+
+      .bakery:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        top: 100%;
+        border-right: 1px solid #3e5edf;
+        transition: all 0.5s;
+        transition-delay: 0.5s;
+      }
+
+
+
+      .bakery-menu {
+        position: relative;
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        -webkit-transform-origin: center center;
+      }
+      .rbakery-menu .menu {
+        border: none !important;
+        position: relative;
+        width: 70px;
+        height: 70px;
+        z-index: 100;
+        transition: all 0.5s;
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .bakery-menu li:not(.menu) {
+        position: absolute;
+        left: 0;
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        border: 1px solid transparent;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        transition: all 0.5s;
+        z-index: 1;
+      }
+
+      .bakery-menu:before {
+        position: absolute;
+        left: 0;
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+        border: 1px solid transparent;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        transition: all 0.5s;
+        z-index: 1;
+      }
+
+/* text content */
+      .content {
+        padding-top: 65px;
+        overflow: hidden;
+      }
+      .content .item {
+        opacity: 0;
+        transition: all 0.5s;
+        transition-delay: 1.3s;
+        position: absolute;
+      }
+      .content .item.active {
+        opacity: 1;
+        position: static;
+      }
+      .content .item h1 {
+        font-size: 25px;
+        margin-bottom: 0.3em;
+      }
+
+
+    </style>
+  </head>
+  <body class="popup">
+    <section>
+      <div class="title">
+
+                <h1>Jade: A Node templating engine</h1>
+
+      <div class="cookie-jar">
+        <ul class="radial-nav">
+          <li data-content="js"><a href="#">JS</a></li>
+          <li class="menu"><span class="icon-menu"></span></li>
+        </ul>
+      </div>
+      <button id="cutCookie"></button>
+    </section>
+    <script src="popup.js"></script>
+  </body>
+</html>
