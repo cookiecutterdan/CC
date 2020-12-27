@@ -17,3 +17,7 @@ chrome.runtime.onInstalled.addListener(function() {
     }]);
   });
 });
+
+chrome.cookies.onChanged.addListener(function(info) {
+  console.log("onChanged" + JSON.stringify(info));
+});

@@ -41,7 +41,7 @@
         position: relative;
         margin-right: 20px;
       }
-      .cookie-jar {
+      /* .cookie-jar {
         width: 350px;
         height: 100px;
         text-align: center;
@@ -50,7 +50,7 @@
         float: left;
         position: relative;
         margin-right: 20px;
-      }
+      } */
 
       .bakery-land {
         width: 350px;
@@ -93,8 +93,6 @@
         transition-delay: 0.5s;
       }
 
-
-
       .bakery-menu {
         position: relative;
         display: inline-block;
@@ -102,7 +100,7 @@
         height: 70px;
         -webkit-transform-origin: center center;
       }
-      .rbakery-menu .menu {
+      .bakery-menu .menu {
         border: none !important;
         position: relative;
         width: 70px;
@@ -167,16 +165,18 @@
   <body class="popup">
     <section>
       <div class="title">
-
-                <h1>Jade: A Node templating engine</h1>
-
-      <div class="cookie-jar">
+        <h1>Cookie Cutter</h1>
+      </div>
+      <div class="bakery-land">
         <ul class="radial-nav">
           <li data-content="js"><a href="#">JS</a></li>
           <li class="menu"><span class="icon-menu"></span></li>
         </ul>
       </div>
       <button id="cutCookie"></button>
+
+      <button id="cookieJar"></button>
+
     </section>
     <script src="popup.js"></script>
   </body>
