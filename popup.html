@@ -29,7 +29,16 @@
 
       }
 
-
+      .bakery {
+        width: 350px;
+        height: 500px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        position: relative;
+        margin-right: 20px;
+      }
 
       .title {
         width: 350px;
@@ -52,36 +61,27 @@
         margin-right: 20px;
       } */
 
-      .bakery-land {
+
+
+      .kitchen {
         width: 350px;
-        height: 100px;
+        height: 200px;
         text-align: center;
         display: inline-block;
         vertical-align: middle;
-        float: left;
+        /* float: left; */
         position: relative;
         margin-right: 20px;
       }
 
-      .bakery {
-        width: 70px;
-        height: 70px;
-        text-align: center;
-        display: inline-block;
-        vertical-align: middle;
-        float: left;
-        position: relative;
-        margin-right: 20px;
-      }
-
-      .bakery:before {
+      .kitchen:before {
         content: "";
         display: inline-block;
         height: 100%;
         vertical-align: middle;
       }
 
-      .bakery:after {
+      .kitchen:after {
         content: "";
         display: inline-block;
         position: absolute;
@@ -93,14 +93,18 @@
         transition-delay: 0.5s;
       }
 
-      .bakery-menu {
+      .kitchen.active:after {
+        top: 0;
+      }
+
+      .countertop {
         position: relative;
         display: inline-block;
         width: 70px;
         height: 70px;
         -webkit-transform-origin: center center;
       }
-      .bakery-menu .menu {
+      .countertop .menu {
         border: none !important;
         position: relative;
         width: 70px;
@@ -111,7 +115,10 @@
         vertical-align: middle;
       }
 
-      .bakery-menu li:not(.menu) {
+      .countertop .menu:active {
+        -webkit-transform: rotate(-15deg);
+      }
+      .countertop li:not(.menu) {
         position: absolute;
         left: 0;
         width: 70px;
@@ -125,7 +132,77 @@
         z-index: 1;
       }
 
-      .bakery-menu:before {
+      .countertop li:not(.menu).selected {
+        -webkit-transform: rotate(0deg) translateX(120px) rotate(0deg);
+        border: 1px solid #5151F1;
+      }
+      .countertop li:not(.menu).selected a {
+        opacity: 1;
+      }
+      .countertop li:not(.menu):before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+      .countertop li:not(.menu) a {
+        display: inline-block;
+        vertical-align: middle;
+        opacity: 0;
+        -webkit-transition: all 0.5s;
+      }
+
+      .countertop.expanded li:not(.menu) {
+        border: 1px solid #5151F1;
+      }
+      .countertop.expanded li:not(.menu):hover {
+        background-color: #5151F1;
+      }
+      .countertop.expanded li:nth-child(1) {
+        -webkit-transform: translateY(-120px);
+      }
+      .countertop.expanded li:nth-child(2) {
+        -webkit-transform: rotate(-45deg) translateX(120px) rotate(45deg);
+      }
+
+
+      .countertop.expanded li a {
+        opacity: 1;
+      }
+      .countertop.expanded .icon-menu {
+        border-color: #5151F1;
+        -webkit-transform: rotate(90deg);
+      }
+      .countertop.expanded .icon-menu:before {
+        border-color: #5151F1;
+      }
+      .countertop.expanded .menu:active {
+        -webkit-transform: rotate(15deg) !important;
+      }
+
+      .icon-menu {
+        display: inline-block;
+        border-top: 3px solid #141444;
+        border-bottom: 3px solid #141444;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        -webkit-transition: all 0.3s;
+      }
+      .icon-menu:before {
+        content: "";
+        display: inline-block;
+        border-bottom: 3px solid #141444;
+        width: 100%;
+        -webkit-transition: all 0.3s;
+      }
+      .icon-menu:hover {
+        border-color: #00003A;
+      }
+      .icon-menu:hover:before {
+        border-color: #00003A;
+      }
+      /* .countertop:before {
         position: absolute;
         left: 0;
         width: 70px;
@@ -137,7 +214,7 @@
         vertical-align: middle;
         transition: all 0.5s;
         z-index: 1;
-      }
+      } */
 
 /* text content */
       .content {
@@ -162,22 +239,37 @@
 
     </style>
   </head>
-  <body class="popup">
+
+  <body class="bakery">
     <section>
       <div class="title">
         <h1>Cookie Cutter</h1>
+        <button id="cutCookie"></button>
+        <button id="cookieJar"></button>
       </div>
-      <div class="bakery-land">
-        <ul class="radial-nav">
-          <li data-content="js"><a href="#">JS</a></li>
-          <li class="menu"><span class="icon-menu"></span></li>
+    </section>
+
+    <section>
+      <div class="kitchen">
+        <ul class="countertop">
+          <li data-content="detected"><a href="#">Cookie Popup Detected</a></li>
+          <li data-content="settings"><a href="#">Settings</a></li>
+          <li class="menu" id="main-menu"><span class="icon-menu"></span></li>
         </ul>
       </div>
-      <button id="cutCookie"></button>
 
-      <button id="cookieJar"></button>
-
+      <section class="content">
+        <article class="item" id="detected">
+          <h1>Grunt: the task runner</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ad laudantium ullam nobis magni, molestiae, nisi doloribus fugiat quam, quo odio ex sequi eum recusandae tempore optio! Veniam, mollitia soluta.</p>
+        </article>
+        <article class="item" id="settings">
+          <h1>Jade: A Node templating engine</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ad laudantium ullam nobis magni, molestiae, nisi doloribus fugiat quam, quo odio ex sequi eum recusandae tempore optio! Veniam, mollitia soluta.</p>
+        </article>
+      </section>
     </section>
+
     <script src="popup.js"></script>
   </body>
 </html>

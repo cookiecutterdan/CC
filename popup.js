@@ -4,6 +4,38 @@
 
 'use strict';
 
+let menuButton = document.getElementById('main-menu');
+
+
+function radialMenu() {
+  $('.countertop').on('click', function (evt) {
+    evt.stopPropagation();
+    $('.kitchen, .item').removeClass('active');
+    $(this).toggleClass('expanded');
+    $(this).find('li').removeClass('selected');
+  });
+
+  $('.countertop li').not('.menu').click(function (evt) {
+    evt.stopPropagation();
+    $(this).addClass('selected');
+    $('.kitchen').addClass('active');
+    $('.countertop').removeClass('expanded');
+    getContent(this);
+  });
+
+  function getContent(elem) {
+    $('#' + $(elem).attr('data-content')).addClass('active');
+  }
+}
+
+menuButton.onclick = function()  {
+  radialMenu();
+};
+
+
+
+
+
 let changeColor = document.getElementById('cutCookie');
 
 chrome.storage.sync.get('color', function(data) {
