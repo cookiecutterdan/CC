@@ -42,6 +42,23 @@
         margin-right: 20px;
       }
 
+      .section {
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        float: left;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      .button-section {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;      }
 
     </style>
   </head>
@@ -50,10 +67,20 @@
       <div class="title">
         <h1>Cookie Cutter</h1>
       </div>
-      <button id="cutCookie"></button>
-      <button id="cookieJar"></button>
-      <button id="options"></button>
-
+      <div class="title">
+        <div class="title">
+          <h3>Cut Cookie</h3>
+          <button id="cutCookie"></button>
+        </div>
+        <div class="title">
+          <h3>Cookie Jar</h3>
+          <button id="cookieJar"></button>
+        </div>
+        <div class="title">
+          <h3>Settings</h3>
+          <button id="options"></button>
+        </div>
+      </div>
     </section>
     <script src="popup.js"></script>
   </body>
