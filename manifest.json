@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
-  "version": "1.0",
-  "description": "Build an Extension!",
+  "name": "Cookie Cutter",
+  "version": "0.1.0",
+  "description": "Removes Cookies",
   "permissions": ["cookies", "tabs", "http://*/*", "https://*/*", "activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
