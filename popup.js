@@ -35,6 +35,7 @@ changeColor.onclick = function(element) {
 
 
 let cookieJar = document.getElementById('cookieJar');
+let options = document.getElementById('options');
 
 
 function focusOrCreateTab(url) {
@@ -61,4 +62,9 @@ function focusOrCreateTab(url) {
 cookieJar.onclick = function(element)  {
   var manager_url = chrome.extension.getURL("cookiejar.html");
   focusOrCreateTab(manager_url);
+};
+
+options.onclick = function(element)  {
+  var options_url = chrome.extension.getURL("options.html");
+  focusOrCreateTab(options_url);
 };
